@@ -1,2 +1,5 @@
+spring:
+   message: Welcome to Live Reload
+
 server:
   port: 8081
