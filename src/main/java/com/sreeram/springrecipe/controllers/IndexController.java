@@ -1,11 +1,13 @@
 package com.sreeram.springrecipe.controllers;
 
 import com.sreeram.springrecipe.services.RecipeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+@Slf4j
 @Controller
 public class IndexController {
 
@@ -37,12 +39,15 @@ public class IndexController {
 
         model.addAttribute("recipes",recipeService.getRecipes());
 
+        log.debug("I am in the index controller!!!");
+
         System.out.println("I am in the index controller!!!");
         return "index";
     }
 
     @RequestMapping({"/hello"})
     public String hello(Model model){
+        log.debug("hello hello!!!");
         model.addAttribute("message",message);
         return "hello";
     }
